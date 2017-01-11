@@ -4,6 +4,7 @@ use std::thread;
 fn exec_build(mode: &str) {
     let mut cargo_command = Command::new("cargo");
     cargo_command.arg("build");
+    cargo_command.arg("--color").arg("always");
     match mode {
         "release" => {
             cargo_command.arg("--release");
